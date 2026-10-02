@@ -121,7 +121,14 @@
      - section reveals: one IntersectionObserver toggling .is-in (CSS transition on transform/opacity)
      - parallax + stacking cards: GSAP ScrollTrigger, loaded after the page is idle and only where used */
   if (reduce) return;
-  var reveals = document.querySelectorAll('[data-reveal]');
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  var showAll = function () { reveals.forEach(function (el) { el.classList.add('is-in'); }); document.documentElement.classList.add('reveal-done'); };
+  setTimeout(showAll, 1500);  // safety net: nothing can stay hidden
+  reveals = reveals.filter(function (el) {  // anything already on screen shows immediately
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) { el.classList.add('is-in'); return false; }
+    return true;
+  });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
@@ -135,12 +142,12 @@
   function startScroll() {
     load('gsap.min.js', function () { load('ScrollTrigger.min.js', function () {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('[data-parallax]').forEach(function (el) {
-        var amt = parseFloat(el.getAttribute('data-parallax')) || 8;
-        gsap.to(el, { yPercent: -amt, ease: 'none', scrollTrigger: { trigger: el.closest('section') || el, start: 'top top', end: 'bottom top', scrub: true } });
-      });
       ScrollTrigger.matchMedia({
         '(min-width: 992px)': function () {
+          gsap.utils.toArray('[data-parallax]').forEach(function (el) {
+            var amt = parseFloat(el.getAttribute('data-parallax')) || 8;
+            gsap.to(el, { yPercent: -amt, ease: 'none', scrollTrigger: { trigger: el.closest('section') || el, start: 'top top', end: 'bottom top', scrub: true } });
+          });
           var cards = gsap.utils.toArray('[data-stack] > *');
           cards.forEach(function (card, i) {
             var nextCard = cards[i + 1];
