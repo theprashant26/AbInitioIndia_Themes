@@ -302,6 +302,7 @@ body.menu-open{overflow:hidden}
 .footer-h{font-size:1rem;color:#fff;letter-spacing:0;margin-bottom:1rem}
 .site-footer ul{list-style:none;padding:0;margin:0}.site-footer li{margin-bottom:.55rem}
 .site-footer a{color:#b8c7dc}.site-footer a:hover{color:var(--sun)}
+.site-footer a.btn-blue,.site-footer a.btn-blue:hover{color:#fff}
 .site-footer .footer-cta a.footer-cta-tel{color:var(--navy)}
 .site-footer :focus-visible{outline-color:var(--sun)}
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 0 30px;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem}
