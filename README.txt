@@ -4,9 +4,10 @@ Three static website themes with a glassmorphism signature style, each with its 
 Built with Bootstrap 5.3, Bootstrap Icons, GSAP and ScrollTrigger (all included locally).
 No build step: every page is plain HTML/CSS/JS.
 
-Theme-A-Heritage      "Midnight Gold Glass"  – midnight + amber/gold light, Cormorant Garamond / Manrope
-                      Full-viewport centred hero over India Gate at night, glass client-logo marquee,
-                      sticky stacking service cards, editorial about/team layouts, magazine insights.
+Theme-A-Heritage      "Ivory Gold Glass"     – light luxury editorial: ivory, champagne, soft gold hairlines,
+                      Cormorant Garamond / Manrope, sharp corners. Asymmetric hero with an arched photo of
+                      Lutyens' Delhi, logo marquee between gold hairlines, compact two-column services list,
+                      arched team portraits, magazine insights, deep warm-ink footer.
 Theme-B-Brand-Blue    "Aurora Brand Glass"   – blue #1552A1 + sunflower #FACF00 aurora, Plus Jakarta Sans
                       Split hero with a floating bento cluster, bento services grid with hover tilt,
                       "How we work" process timeline, filterable insights grid.
@@ -48,7 +49,8 @@ sitemap.xml, robots.txt
 Each theme folder is fully self-contained: assets/css/style.css (tokens first, then the
 .glass / .glass-strong / .glass-dark system, then components), assets/js/main.js, local vendor
 libraries, and its own images in assets/img (team/, mentors/, services/, insights/, pages/,
-clients/, stock/ and v/ for resized WebP variants).
+clients/, stock/ and v/ for resized WebP variants). Client logos are WebP with a JPG/PNG fallback
+and neutral file names (client-01 … client-11).
 
 Performance
 -----------
@@ -60,15 +62,17 @@ Icon and Google Fonts stylesheets load without blocking rendering; images use We
 Motion
 ------
 CSS hero entrance, IntersectionObserver section reveals, slow CSS background drift, and GSAP
-ScrollTrigger (loaded after the page is idle) for the Theme B hero parallax, the Theme A stacking
-cards and the Theme C hero parallax. All non-essential motion is off under prefers-reduced-motion.
+ScrollTrigger (loaded after the page is idle, desktop only) for the Theme B and Theme C hero parallax.
+Content is visible by default: the "hidden before reveal" state only applies once a script adds
+.motion to <html>; anything already on screen is revealed at once, and a 1.5 s safety timer reveals
+everything. All non-essential motion is off under prefers-reduced-motion.
 
 Photo credits (free to use under the Pexels licence, https://www.pexels.com/license/)
 -------------------------------------------------------------------------------------
-- India Gate at night – Ranjeet Chauhan, https://www.pexels.com/photo/india-gate-in-new-delhi-at-night-19927020/ (Theme A)
+- Lutyens' Delhi government building (listed on Pexels as "Rashtrapati Bhavan in Delhi") – Maahid Photos, https://www.pexels.com/photo/rashtrapati-bhavan-in-delhi-3881113/ (Theme A)
 - Boardroom table and chairs – Leandro Alamino, https://www.pexels.com/photo/black-leather-office-rolling-chairs-beside-brown-wooden-table-3906592/ (Theme A)
 - Team meeting in a conference room – Tiger Lily, https://www.pexels.com/photo/employees-having-a-meeting-inside-the-conference-room-7108454/ (Theme B)
-- India Gate at sunset – Ravi Roshan, https://www.pexels.com/photo/india-gate-in-new-delhi-at-sunset-16960242/ (Theme C)
+- India Gate at sunset – Saurabh Kumar, https://www.pexels.com/photo/people-near-the-india-gate-during-sunset-6472566/ (Theme C)
 - Modern conference room – Fahad Puthawala, https://www.pexels.com/photo/modern-conference-room-with-professional-setup-32168739/ (Theme C)
 All are stored locally as WebP (each under 250 KB) – nothing is hotlinked.
 
