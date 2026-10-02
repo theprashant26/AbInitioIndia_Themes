@@ -101,7 +101,7 @@ button{font:inherit;cursor:pointer}
 .hero h1 em{font-style:italic;color:var(--gold-l)}
 .hero .lead{font-size:1.12rem;color:var(--fg);max-width:32em;margin:0 0 1.8rem}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
-@media (min-width:1600px){.hero-panel{max-width:620px}}
+@media (min-width:1600px){.hero-panel{max-width:540px}.hero h1{font-size:4.4rem}}
 @media (max-width:991.98px){
   .hero{display:block;min-height:0;padding:0 0 40px}
   .hero-media{position:relative;inset:auto;aspect-ratio:4/3;max-height:58vh;z-index:0}
