@@ -50,6 +50,13 @@ Each theme folder is fully self-contained: assets/css/style.css (tokens first, t
 libraries, and its own images in assets/img (team/, mentors/, services/, insights/, pages/,
 clients/, stock/ and v/ for resized WebP variants).
 
+Performance
+-----------
+Pages link assets/vendor/bootstrap.subset.min.css – the Bootstrap 5.3 rules each theme actually
+uses (about 23 KB instead of 227 KB). The full bootstrap.min.css is kept alongside it; switch the
+<link> back to it if you add Bootstrap components that the subset does not include.
+Icon and Google Fonts stylesheets load without blocking rendering; images use WebP variants.
+
 Motion
 ------
 CSS hero entrance, IntersectionObserver section reveals, slow CSS background drift, and GSAP

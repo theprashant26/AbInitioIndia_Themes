@@ -17,6 +17,9 @@
 }
 
 /* 2. Base ------------------------------------------------------------- */
+/* Rendering performance: skip off-screen sections until they approach the viewport */
+main>section+section,.site-footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
+
 html{scroll-padding-top:110px}
 .container-xl{--bs-gutter-x:3rem}
 body{overflow-x:clip;font-family:var(--fb);color:var(--text);background:var(--bg);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
