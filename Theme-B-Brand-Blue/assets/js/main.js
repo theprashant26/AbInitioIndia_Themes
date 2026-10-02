@@ -124,11 +124,11 @@
   var reveals = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
   var showAll = function () { reveals.forEach(function (el) { el.classList.add('is-in'); }); document.documentElement.classList.add('reveal-done'); };
   setTimeout(showAll, 1500);  // safety net: nothing can stay hidden
-  reveals = reveals.filter(function (el) {  // anything already on screen shows immediately
-    var r = el.getBoundingClientRect();
-    if (r.top < window.innerHeight && r.bottom > 0) { el.classList.add('is-in'); return false; }
-    return true;
-  });
+  // anything already on screen shows immediately (read all positions first, then write, to avoid layout thrashing)
+  var vh = window.innerHeight;
+  var inView = reveals.map(function (el) { var r = el.getBoundingClientRect(); return r.top < vh && r.bottom > 0; });
+  reveals.forEach(function (el, i) { if (inView[i]) el.classList.add('is-in'); });
+  reveals = reveals.filter(function (el, i) { return !inView[i]; });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });

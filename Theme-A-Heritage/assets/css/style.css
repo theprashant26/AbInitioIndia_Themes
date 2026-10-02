@@ -108,15 +108,15 @@ body.menu-open{overflow:hidden}
 .hero-quote figcaption{font-size:.82rem;color:var(--taupe)}.hero-quote figcaption strong{display:block;color:var(--gold-d)}
 
 /* 8. Home sections ----------------------------------------------------- */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0 18px;background:rgba(255,252,245,.5)}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0 18px;background:#fff}
 .marquee-head p{font-family:var(--fd);font-style:italic;font-size:1.2rem;color:var(--taupe);text-align:center;margin:0 0 12px}
 .marquee-viewport{overflow:hidden}
-.marquee-track{display:flex;width:max-content;animation:marquee 48s linear infinite}
+.marquee-track{display:flex;width:max-content;animation:marquee 48s linear infinite;will-change:transform}
 .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
 .marquee .logo-row{display:flex;gap:44px;list-style:none;margin:0;padding:0 22px;align-items:center}
 @keyframes marquee{to{transform:translateX(-50%)}}
 .logo-chip{display:flex;align-items:center;height:56px}
-.logo-chip img{height:38px;width:auto;max-width:130px;object-fit:contain;mix-blend-mode:multiply;filter:saturate(.85)}
+.logo-chip img{height:38px;width:auto;max-width:130px;object-fit:contain}
 .frame{position:relative;margin:0;padding:0 22px 22px 0}
 .frame::before{content:"";position:absolute;left:22px;top:22px;right:0;bottom:0;border:1px solid var(--gold)}
 .frame img{position:relative;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:var(--radius)}
