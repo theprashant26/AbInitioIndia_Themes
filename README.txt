@@ -1,15 +1,21 @@
 Ab Initio India – Website theme options
 =======================================
-Three static website themes, built with Bootstrap 5.3, Bootstrap Icons and GSAP
-(same stack as the Ab Initio Legal site). All libraries are included locally.
+Three static website themes with a glassmorphism signature style, each with its own layout.
+Built with Bootstrap 5.3, Bootstrap Icons, GSAP and ScrollTrigger (all included locally).
 No build step: every page is plain HTML/CSS/JS.
 
-Theme-A-Heritage      Ink black + antique gold, Cormorant Garamond / Manrope (matches Ab Initio Legal)
-Theme-B-Brand-Blue    Logo blue #1552A1 + sunflower #FACF00, Plus Jakarta Sans
-Theme-C-Crimson-Gold  Ivory, crimson and gold, DM Serif Display / DM Sans
+Theme-A-Heritage      "Midnight Gold Glass"  – midnight + amber/gold light, Cormorant Garamond / Manrope
+                      Full-viewport centred hero over India Gate at night, glass client-logo marquee,
+                      sticky stacking service cards, editorial about/team layouts, magazine insights.
+Theme-B-Brand-Blue    "Aurora Brand Glass"   – blue #1552A1 + sunflower #FACF00 aurora, Plus Jakarta Sans
+                      Split hero with a floating bento cluster, bento services grid with hover tilt,
+                      "How we work" process timeline, filterable insights grid.
+Theme-C-Crimson-Gold  "Royal Crimson Glass"  – crimson-to-wine with gold light leaks, DM Serif Display / DM Sans
+                      Full-bleed India Gate hero with a large glass panel, tabbed services, large glass
+                      testimonial, insights carousel, mentors as tabs, insights grouped by year.
 
 Live preview: https://theprashant26.github.io/AbInitioIndia_Themes/
-(the root index.html is a chooser page linking to all three themes)
+(the root index.html is a chooser page with a preview of each theme)
 
 Pages (identical set in every theme folder)
 -------------------------------------------
@@ -39,8 +45,25 @@ accessibility-statement.html
 thank-you.html                 Shown after the enquiry form is sent (not indexed)
 sitemap.xml, robots.txt
 
-Images live in each theme's assets/img (team/, mentors/, services/, insights/, pages/),
-so every theme folder is fully self-contained.
+Each theme folder is fully self-contained: assets/css/style.css (tokens first, then the
+.glass / .glass-strong / .glass-dark system, then components), assets/js/main.js, local vendor
+libraries, and its own images in assets/img (team/, mentors/, services/, insights/, pages/,
+clients/, stock/ and v/ for resized WebP variants).
+
+Motion
+------
+CSS hero entrance, IntersectionObserver section reveals, slow CSS background drift, and GSAP
+ScrollTrigger (loaded after the page is idle) for the Theme B hero parallax, the Theme A stacking
+cards and the Theme C hero parallax. All non-essential motion is off under prefers-reduced-motion.
+
+Photo credits (free to use under the Pexels licence, https://www.pexels.com/license/)
+-------------------------------------------------------------------------------------
+- India Gate at night – Ranjeet Chauhan, https://www.pexels.com/photo/india-gate-in-new-delhi-at-night-19927020/ (Theme A)
+- Boardroom table and chairs – Leandro Alamino, https://www.pexels.com/photo/black-leather-office-rolling-chairs-beside-brown-wooden-table-3906592/ (Theme A)
+- Team meeting in a conference room – Tiger Lily, https://www.pexels.com/photo/employees-having-a-meeting-inside-the-conference-room-7108454/ (Theme B)
+- India Gate at sunset – Ravi Roshan, https://www.pexels.com/photo/india-gate-in-new-delhi-at-sunset-16960242/ (Theme C)
+- Modern conference room – Fahad Puthawala, https://www.pexels.com/photo/modern-conference-room-with-professional-setup-32168739/ (Theme C)
+All are stored locally as WebP (each under 250 KB) – nothing is hotlinked.
 
 Notes
 -----
@@ -49,5 +72,5 @@ Notes
 - Two article slugs are longer than Windows' 260-character path limit allows by default.
   On Windows, clone with:  git config --global core.longpaths true
 
-Content, logos and images are taken from the current abinitioindia.com website.
+Content, logos, team photos and article images are taken from the current abinitioindia.com website.
 Prepared by Prashant Kumar

@@ -3,64 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ab Initio India – Homepage Theme Options</title>
+<title>Ab Initio India – Website Theme Options</title>
+<meta name="description" content="Three glassmorphism design directions for the new Ab Initio India website: Midnight Gold Glass, Aurora Brand Glass and Royal Crimson Glass.">
+<meta name="robots" content="noindex">
 <link rel="icon" href="Theme-B-Brand-Blue/assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+  :root { --ink: #10121c; --text: rgba(246,243,236,.86); --muted: rgba(246,243,236,.7); --line: rgba(255,255,255,.18); }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f5f5f2; color: #1a1a1a; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 48px 16px; }
-  header { text-align: center; margin-bottom: 40px; }
-  header img { height: 56px; margin-bottom: 16px; }
-  h1 { font-size: 1.9rem; margin: 0 0 8px; }
-  header p { color: #555; margin: 0; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.07); transition: transform .2s, box-shadow .2s; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.12); }
-  .swatch { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 700; letter-spacing: .5px; }
-  .a .swatch { background: #111; color: #c9a45c; font-family: Georgia, serif; }
-  .b .swatch { background: #1552A1; color: #FACF00; }
-  .c .swatch { background: #fbf7ef; color: #a3172b; font-family: Georgia, serif; border-bottom: 4px solid #c9a24a; }
-  .body { padding: 20px; }
-  .body h2 { margin: 0 0 6px; font-size: 1.15rem; }
-  .body p { margin: 0 0 14px; color: #555; font-size: .95rem; line-height: 1.5; }
-  .btn { display: inline-block; font-weight: 600; font-size: .9rem; color: #1552A1; }
-  footer { text-align: center; color: #888; font-size: .85rem; margin-top: 48px; }
+  body { margin: 0; min-height: 100vh; font-family: "Plus Jakarta Sans", system-ui, "Segoe UI", sans-serif; color: var(--text); background: var(--ink); overflow-x: clip; }
+  .backdrop { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: radial-gradient(120% 90% at 50% 0%, #1b1d2e 0%, var(--ink) 60%); }
+  .backdrop span { position: absolute; width: 56vmax; height: 56vmax; border-radius: 50%; animation: drift 40s ease-in-out infinite alternate; }
+  .backdrop .gold { left: -18vmax; top: -10vmax; background: radial-gradient(circle, rgba(201,164,92,.42), transparent 62%); }
+  .backdrop .blue { right: -18vmax; top: 6vmax; background: radial-gradient(circle, rgba(21,82,161,.6), transparent 62%); animation-duration: 48s; }
+  .backdrop .crim { left: 22vmax; bottom: -30vmax; background: radial-gradient(circle, rgba(160,16,32,.55), transparent 62%); animation-duration: 56s; }
+  @keyframes drift { to { transform: translate3d(6vmax, 6vmax, 0) scale(1.08); } }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; }
+  header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+  .logo { display: inline-block; background: #fff; border-radius: 16px; padding: 10px 16px; margin-bottom: 24px; }
+  .logo img { height: 52px; display: block; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; color: #fff; margin: 0 0 14px; }
+  header p { margin: 0; color: var(--muted); font-size: 1.08rem; line-height: 1.6; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { display: flex; flex-direction: column; text-decoration: none; color: var(--text); border-radius: 26px; padding: 12px; background: rgba(255,255,255,.08); border: 1px solid var(--line); box-shadow: 0 30px 70px -36px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.18); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); transition: transform .3s, border-color .3s; }
+  .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,.4); color: var(--text); }
+  .card:focus-visible { outline: 3px solid #facf00; outline-offset: 4px; }
+  .shot { border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; background: #222; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
+  .card:hover .shot img { transform: scale(1.04); }
+  .body { padding: 18px 10px 10px; display: flex; flex-direction: column; flex: 1; }
+  .tag { align-self: flex-start; font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 999px; margin-bottom: 12px; }
+  .a .tag { background: rgba(201,164,92,.2); color: #e3c88f; }
+  .b .tag { background: rgba(21,82,161,.35); color: #cfe0ff; }
+  .c .tag { background: rgba(160,16,32,.4); color: #f6d7a8; }
+  .body h2 { margin: 0 0 8px; font-size: 1.35rem; color: #fff; letter-spacing: -.02em; }
+  .body p { margin: 0 0 18px; color: var(--muted); font-size: .95rem; line-height: 1.6; flex: 1; }
+  .go { font-weight: 700; color: #fff; display: inline-flex; align-items: center; gap: 8px; }
+  .go::after { content: "→"; transition: transform .25s; }
+  .card:hover .go::after { transform: translateX(4px); }
+  footer { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 48px; }
+  @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) { .card { background: #1d1f2e; } }
+  @media (max-width: 991px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .wrap { padding-top: 40px; } }
+  @media (prefers-reduced-motion: reduce) { .backdrop span { animation: none; } .card, .shot img, .go::after { transition: none; } }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="backdrop" aria-hidden="true"><span class="gold"></span><span class="blue"></span><span class="crim"></span></div>
+<main class="wrap">
   <header>
-    <img src="Theme-B-Brand-Blue/assets/img/logo.png" alt="Ab Initio India">
-    <h1>Homepage Theme Options</h1>
-    <p>Three design directions for the new abinitioindia.com homepage. Click a theme to preview it.</p>
+    <span class="logo"><img src="Theme-B-Brand-Blue/assets/img/logo.png" alt="Ab Initio India" width="150" height="71"></span>
+    <h1>Website theme options</h1>
+    <p>Three glassmorphism design directions for the new abinitioindia.com, each with its own layout. Open a theme to explore every page.</p>
   </header>
   <div class="grid">
     <a class="card a" href="Theme-A-Heritage/index.html">
-      <div class="swatch">Heritage</div>
-      <div class="body">
-        <h2>Theme A – Heritage</h2>
-        <p>Ink black with antique gold. Classic serif headings, in line with the Ab Initio Legal site.</p>
-        <span class="btn">Preview Theme A →</span>
-      </div>
+      <div class="shot"><img src="assets/previews/theme-a.webp" alt="" width="800" height="500"></div>
+      <div class="body"><span class="tag">Theme A</span><h2>Midnight Gold Glass</h2>
+        <p>Deep midnight with drifting amber light behind frosted glass. Editorial serif type, sticky stacking service cards and a magazine-style insights page.</p>
+        <span class="go">Preview Theme A</span></div>
     </a>
     <a class="card b" href="Theme-B-Brand-Blue/index.html">
-      <div class="swatch">Brand Blue</div>
-      <div class="body">
-        <h2>Theme B – Brand Blue</h2>
-        <p>The logo blue with a sunflower yellow accent. Modern and clean, close to the current brand.</p>
-        <span class="btn">Preview Theme B →</span>
-      </div>
+      <div class="shot"><img src="assets/previews/theme-b.webp" alt="" width="800" height="500"></div>
+      <div class="body"><span class="tag">Theme B</span><h2>Aurora Brand Glass</h2>
+        <p>Light and airy, with a blue and sunflower aurora in the logo colours. A floating bento hero, bento services grid, process timeline and filterable insights.</p>
+        <span class="go">Preview Theme B</span></div>
     </a>
     <a class="card c" href="Theme-C-Crimson-Gold/index.html">
-      <div class="swatch">Crimson &amp; Gold</div>
-      <div class="body">
-        <h2>Theme C – Crimson &amp; Gold</h2>
-        <p>Ivory background with crimson and gold. Warm and premium, with elegant serif headings.</p>
-        <span class="btn">Preview Theme C →</span>
-      </div>
+      <div class="shot"><img src="assets/previews/theme-c.webp" alt="" width="800" height="500"></div>
+      <div class="body"><span class="tag">Theme C</span><h2>Royal Crimson Glass</h2>
+        <p>Crimson and wine with soft gold light leaks and warm frosted glass. A full-bleed India Gate hero, tabbed services and an insights carousel.</p>
+        <span class="go">Preview Theme C</span></div>
     </a>
   </div>
   <footer>Prepared by Prashant Kumar</footer>
-</div>
+</main>
 </body>
 </html>
