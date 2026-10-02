@@ -236,11 +236,13 @@ button{font:inherit;cursor:pointer}
 .ins-card:hover{transform:translateY(-4px);box-shadow:0 28px 54px -32px rgba(60,16,10,.55)}
 .ins-media{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--sand)}
 .ins-media img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.ins-body{padding:1.2rem 1.35rem 1.4rem}
+.ins-body{padding:1.2rem 1.35rem 1.4rem;flex:1 1 auto;display:flex;flex-direction:column}
 .ins-meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.84rem;color:var(--muted);margin-bottom:.45rem}
 .ins-meta span{color:var(--crim);font-weight:700}
 .ins-card h2,.ins-card h3{font-size:1.25rem;line-height:1.28;margin:0}
-.ins-card h2 a,.ins-card h3 a{color:var(--fg-strong)}.ins-card h2 a:hover,.ins-card h3 a:hover{color:var(--crim)}
+.ins-card h2 a,.ins-card h3 a{color:var(--fg-strong);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+/* carousel slides stretch to the tallest card (a % height would block the stretch) */
+.track>.ins-card{height:auto}.ins-card h2 a:hover,.ins-card h3 a:hover{color:var(--crim)}
 
 /*! critical:about:start */
 /* 13. About ------------------------------------------------------------- */
@@ -262,6 +264,7 @@ button{font:inherit;cursor:pointer}
 .members{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .member{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column}
 .member-photo{background:#fff;border-bottom:2px solid var(--gold)}
+.member-photo picture,.person-photo picture{display:block}
 .member-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;display:block}
 .member-body{padding:1.3rem 1.4rem 1.5rem}
 .member-body h3{font-size:1.5rem;margin:0}
