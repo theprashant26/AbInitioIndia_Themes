@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://theprashant26.github.io/AbInitioIndia_Themes/Theme-C-Crimson-Gold/sitemap.xml

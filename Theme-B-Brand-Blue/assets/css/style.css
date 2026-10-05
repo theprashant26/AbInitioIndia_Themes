@@ -8,7 +8,7 @@
 /* 1. Tokens ----------------------------------------------------------- */
 :root{
   --blue:#1552a1; --blue-d:#0b3570; --navy:#0a2140; --sun:#facf00; --sun-d:#e5bc00;
-  --sky:#eaf2fb; --bg:#f4f7fc; --text:#24324a; --muted:#4a5a73; --line:rgba(10,33,64,.12);
+  --sky:#eaf2fb; --bg:#ffffff; --text:#24324a; --muted:#4a5a73; --line:rgba(10,33,64,.12);
   --r-lg:32px; --r-md:24px; --r-sm:14px;
   --shadow:0 28px 60px -26px rgba(10,33,64,.42);
   --glass-bg:rgba(255,255,255,.66); --glass-strong:rgba(255,255,255,.84);
@@ -47,8 +47,10 @@ a{color:var(--blue);text-decoration:none}a:hover{color:var(--blue-d)}
 }
 
 /* 4. Aurora backdrop -------------------------------------------------- */
-.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(180deg,#eef4fc 0%,#f7f9fd 60%,#f3f6fb 100%)}
-.orb{position:absolute;width:62vmax;height:62vmax;border-radius:50%;opacity:.85;will-change:transform}
+/* White page: the brand tint sits only behind the top of the page (hero / banner) and fades out to white */
+.aurora{position:absolute;top:0;left:0;right:0;height:100vh;min-height:640px;z-index:-1;overflow:hidden;pointer-events:none;background:#fff;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+.orb{position:absolute;width:62vmax;height:62vmax;border-radius:50%;opacity:.22;will-change:transform}
+.o3,.o4{display:none}
 .o1{background:radial-gradient(circle,rgba(21,82,161,.7) 0,rgba(21,82,161,0) 62%);top:-28vmax;left:-18vmax;animation:drift1 34s ease-in-out infinite alternate}
 .o2{background:radial-gradient(circle,rgba(250,207,0,.75) 0,rgba(250,207,0,0) 60%);top:-12vmax;right:-26vmax;animation:drift2 40s ease-in-out infinite alternate}
 .o3{background:radial-gradient(circle,rgba(64,140,240,.7) 0,rgba(64,140,240,0) 60%);bottom:-34vmax;left:20vmax;animation:drift3 46s ease-in-out infinite alternate}
