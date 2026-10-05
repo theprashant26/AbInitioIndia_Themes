@@ -1,6 +1,6 @@
 Ab Initio India – Website theme options
 =======================================
-Static website themes with a glassmorphism signature style, each with its own layout.
+Static website theme with a glassmorphism signature style.
 Built with Bootstrap 5.3, Bootstrap Icons, GSAP and ScrollTrigger (all included locally).
 No build step: every page is plain HTML/CSS/JS.
 
@@ -8,10 +8,11 @@ Theme-A-Heritage      "Ivory Gold Glass"     – light luxury editorial: ivory, 
                       Cormorant Garamond / Manrope, sharp corners. Asymmetric hero with an arched photo of
                       Lutyens' Delhi, logo marquee between gold hairlines, compact two-column services list,
                       arched team portraits, magazine insights, deep warm-ink footer.
-Theme-B-Brand-Blue    "Aurora Brand Glass"   – client's chosen theme. White pages with a faint blue/sunflower
-                      tint behind the hero; blue #1552A1 + sunflower #FACF00 accents, Plus Jakarta Sans.
-                      Split hero with a floating bento cluster, bento services grid with hover tilt,
-                      "How we work" process timeline, filterable insights grid.
+
+Theme B "Aurora Brand Glass" was chosen by the client and now lives in its own project,
+AbInitioIndia_Main (the production website). Its full history stays here:
+  branch  archive/theme-b-brand-blue     tag  theme-b-brand-blue-v1
+  https://github.com/theprashant26/AbInitioIndia_Themes/tree/archive/theme-b-brand-blue
 
 Theme C "Royal Crimson Glass" has been moved off the main branch and is kept for later use:
   branch  archive/theme-c-crimson-gold   (whole repo as it was, Theme C launch-ready)
@@ -21,13 +22,13 @@ Theme C "Royal Crimson Glass" has been moved off the main branch and is kept for
   Its own launch notes (critical CSS, redirects, canonical URLs) are in that branch's README.
 
 Live preview: https://theprashant26.github.io/AbInitioIndia_Themes/
-(the root index.html is a chooser page with a preview of each theme)
+(the root index.html links to the theme)
 
-Pages (identical set in every theme folder)
--------------------------------------------
+Pages
+-----
 index.html                     Homepage
 about.html                     About us – firm profile, philosophy, mission/vision, transactions handled
-team.html                      Our team (12 members, photos and bios)
+team.html                      Our team (11 members, photos and bios)
 mentors.html                   Our mentors (5 mentors)
 services.html                  Our services – all 8 services and company values
 services/business-advocacy.html
@@ -51,7 +52,7 @@ accessibility-statement.html
 thank-you.html                 Shown after the enquiry form is sent (not indexed)
 sitemap.xml, robots.txt
 
-Each theme folder is fully self-contained: assets/css/style.css (tokens first, then the
+The theme folder is fully self-contained: assets/css/style.css (tokens first, then the
 .glass / .glass-strong / .glass-dark system, then components), assets/js/main.js, local vendor
 libraries, and its own images in assets/img (team/, mentors/, services/, insights/, pages/,
 clients/, stock/ and v/ for resized WebP variants). Client logos are WebP with a JPG/PNG fallback
@@ -67,7 +68,7 @@ Icon and Google Fonts stylesheets load without blocking rendering; images use We
 Motion
 ------
 CSS hero entrance, IntersectionObserver section reveals, slow CSS background drift, and GSAP
-ScrollTrigger (loaded after the page is idle, desktop only) for the Theme B hero parallax.
+ScrollTrigger (loaded after the page is idle, desktop only).
 Content is visible by default: the "hidden before reveal" state only applies once a script adds
 .motion to <html>; anything already on screen is revealed at once, and a 1.5 s safety timer reveals
 everything. All non-essential motion is off under prefers-reduced-motion.
@@ -76,7 +77,6 @@ Photo credits (free to use under the Pexels licence, https://www.pexels.com/lice
 -------------------------------------------------------------------------------------
 - Lutyens' Delhi government building (listed on Pexels as "Rashtrapati Bhavan in Delhi") – Maahid Photos, https://www.pexels.com/photo/rashtrapati-bhavan-in-delhi-3881113/ (Theme A)
 - Boardroom table and chairs – Leandro Alamino, https://www.pexels.com/photo/black-leather-office-rolling-chairs-beside-brown-wooden-table-3906592/ (Theme A)
-- Team meeting in a conference room – Tiger Lily, https://www.pexels.com/photo/employees-having-a-meeting-inside-the-conference-room-7108454/ (Theme B)
 All are stored locally as WebP (each under 250 KB) – nothing is hotlinked.
 
 Notes
