@@ -27,7 +27,7 @@ Pages (identical set in every theme folder)
 -------------------------------------------
 index.html                     Homepage
 about.html                     About us – firm profile, philosophy, mission/vision, transactions handled
-team.html                      Our team (11 members, photos and bios)
+team.html                      Our team (12 members, photos and bios)
 mentors.html                   Our mentors (5 mentors)
 services.html                  Our services – all 8 services and company values
 services/business-advocacy.html
