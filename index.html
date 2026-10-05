@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ab Initio India – Website Theme Options</title>
-<meta name="description" content="Three glassmorphism design directions for the new Ab Initio India website: Ivory Gold Glass, Aurora Brand Glass and Royal Crimson Glass.">
+<meta name="description" content="Glassmorphism design directions for the new Ab Initio India website: Ivory Gold Glass and Aurora Brand Glass.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="Theme-B-Brand-Blue/assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
   .backdrop span { position: absolute; width: 56vmax; height: 56vmax; border-radius: 50%; animation: drift 40s ease-in-out infinite alternate; }
   .backdrop .gold { left: -18vmax; top: -10vmax; background: radial-gradient(circle, rgba(201,164,92,.42), transparent 62%); }
   .backdrop .blue { right: -18vmax; top: 6vmax; background: radial-gradient(circle, rgba(21,82,161,.6), transparent 62%); animation-duration: 48s; }
-  .backdrop .crim { left: 22vmax; bottom: -30vmax; background: radial-gradient(circle, rgba(160,16,32,.55), transparent 62%); animation-duration: 56s; }
   @keyframes drift { to { transform: translate3d(6vmax, 6vmax, 0) scale(1.08); } }
   .wrap { max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; }
   header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
@@ -25,7 +24,7 @@
   .logo img { height: 52px; display: block; }
   h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; color: #fff; margin: 0 0 14px; }
   header p { margin: 0; color: var(--muted); font-size: 1.08rem; line-height: 1.6; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 880px; margin: 0 auto; }
   .card { display: flex; flex-direction: column; text-decoration: none; color: var(--text); border-radius: 26px; padding: 12px; background: rgba(255,255,255,.08); border: 1px solid var(--line); box-shadow: 0 30px 70px -36px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.18); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); transition: transform .3s, border-color .3s; }
   .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,.4); color: var(--text); }
   .card:focus-visible { outline: 3px solid #facf00; outline-offset: 4px; }
@@ -50,12 +49,12 @@
 </style>
 </head>
 <body>
-<div class="backdrop" aria-hidden="true"><span class="gold"></span><span class="blue"></span><span class="crim"></span></div>
+<div class="backdrop" aria-hidden="true"><span class="gold"></span><span class="blue"></span></div>
 <main class="wrap">
   <header>
     <span class="logo"><img src="Theme-B-Brand-Blue/assets/img/logo.png" alt="Ab Initio India" width="150" height="71"></span>
     <h1>Website theme options</h1>
-    <p>Three glassmorphism design directions for the new abinitioindia.com, each with its own layout. Open a theme to explore every page.</p>
+    <p>Glassmorphism design directions for the new abinitioindia.com, each with its own layout. Open a theme to explore every page.</p>
   </header>
   <div class="grid">
     <a class="card a" href="Theme-A-Heritage/index.html">
@@ -67,14 +66,8 @@
     <a class="card b" href="Theme-B-Brand-Blue/index.html">
       <div class="shot"><img src="assets/previews/theme-b.webp" alt="" width="800" height="500"></div>
       <div class="body"><span class="tag">Theme B</span><h2>Aurora Brand Glass</h2>
-        <p>Light and airy, with a blue and sunflower aurora in the logo colours. A floating bento hero, bento services grid, process timeline and filterable insights.</p>
+        <p>Clean and bright on white, with blue and sunflower accents in the logo colours. A floating bento hero, bento services grid, process timeline and filterable insights.</p>
         <span class="go">Preview Theme B</span></div>
-    </a>
-    <a class="card c" href="Theme-C-Crimson-Gold/index.html">
-      <div class="shot"><img src="assets/previews/theme-c.webp" alt="" width="800" height="500"></div>
-      <div class="body"><span class="tag">Theme C</span><h2>Royal Crimson Glass</h2>
-        <p>Crimson and wine with soft gold light leaks and warm frosted glass. A full-bleed India Gate hero, tabbed services and an insights carousel.</p>
-        <span class="go">Preview Theme C</span></div>
     </a>
   </div>
   <footer>Prepared by Prashant Kumar</footer>
